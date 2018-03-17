@@ -120,13 +120,14 @@ public:
         nDefaultPort = 8333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1518220800, 1187039647, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1521247562, 1187039647, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000009721ce4bb0480e087862bad683c7273ee78dfab4dba1496a152780b9"));
         assert(genesis.hashMerkleRoot == uint256S("0xbc72a6a4a0fa5b40c78e5eed91d0cb1cfa10a6d40f382f0389e1da24498a23c3"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.clear();
+        //vSeeds.clear();
+         vSeeds.emplace_back("176.112.212.110");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -165,7 +166,7 @@ public:
 
         chainTxData = ChainTxData{
             // Data as of block 00000000000000000166d612d5595e2b1cd88d71d695fc580af64d8da8658c23 (height 446482).
-             1518220800, // * UNIX timestamp of last known number of transactions
+          1521247562, // * UNIX timestamp of last known number of transactions
              0,  // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             3.2         // * estimated number of transactions per second after that timestamp
