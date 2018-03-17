@@ -122,7 +122,7 @@ public:
         nDefaultPort = 8333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1521255219, 1187039647, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1521257276, 1187039647, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
@@ -183,7 +183,8 @@ public:
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.clear();
-         vSeeds.emplace_back("176.112.212.110");
+         //vSeeds.emplace_back("176.112.212.110");
+         vSeeds.push_back(CDNSSeedData("test", "176.112.212.110"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -222,7 +223,7 @@ public:
 
         chainTxData = ChainTxData{
             // Data as of block 00000000000000000166d612d5595e2b1cd88d71d695fc580af64d8da8658c23 (height 446482).
-        1521255219, // * UNIX timestamp of last known number of transactions
+  1521257276, // * UNIX timestamp of last known number of transactions
              0,  // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             3.2         // * estimated number of transactions per second after that timestamp
