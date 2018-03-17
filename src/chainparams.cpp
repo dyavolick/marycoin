@@ -126,8 +126,6 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
-
-
   // Reset genesis
         consensus.hashGenesisBlock = uint256S("0x");
         std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
@@ -172,17 +170,11 @@ public:
 
 
 
-
-
-
-
-
-
         assert(consensus.hashGenesisBlock == uint256S("0x000000009721ce4bb0480e087862bad683c7273ee78dfab4dba1496a152780b9"));
         assert(genesis.hashMerkleRoot == uint256S("0xbc72a6a4a0fa5b40c78e5eed91d0cb1cfa10a6d40f382f0389e1da24498a23c3"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        //vSeeds.clear();
+         vSeeds.clear();
          //vSeeds.emplace_back("176.112.212.110");
          vSeeds.push_back(CDNSSeedData("test", "176.112.212.110"));
 
